@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<h1>Advanced selectors</h1>
+		<hr />
+
+		<!-- table>thead>tr>(th)*2^^tbody>(tr>(td)*2)*4 -->
+		<table id="simple-table">
+			<thead>
+				<tr>
+					<th>name</th>
+					<th>age</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Bob</td>
+					<td class="special">40</td>
+				</tr>
+				<tr>
+					<td>Alice</td>
+					<td class="special">35</td>
+				</tr>
+				<tr>
+					<td>John</td>
+					<td class="special">24</td>
+				</tr>
+				<tr>
+					<td>Foo</td>
+					<td class="special">28</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<p class="special">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed, minima quas
+			quos rem modi hic blanditiis necessitatibus magnam cumque quod?
+		</p>
+
+		<table id="scoped-table">
+			<thead>
+				<tr>
+					<th>name</th>
+					<th>age</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Bob</td>
+					<td class="special">40</td>
+				</tr>
+				<tr>
+					<td>Alice</td>
+					<td class="special">35</td>
+				</tr>
+				<tr>
+					<td id="john">John</td>
+					<div></div>
+					<td class="special">24</td>
+				</tr>
+				<tr>
+					<td>Foo</td>
+					<td class="special">28</td>
+				</tr>
+				<tr>
+					<td>Foo</td>
+					<td class="special">28</td>
+				</tr>
+				<tr>
+					<td>Foo</td>
+					<td class="special">28</td>
+				</tr>
+				<tr>
+					<td>Foo</td>
+					<td class="special">28</td>
+				</tr>
+				<tr>
+					<td>Foo</td>
+					<td class="special">28</td>
+				</tr>
+				<tr>
+					<td>Foo</td>
+					<td class="special">28</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+
+	<p id="text">
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident iste
+		nobis possimus quae deleniti error veniam sapiente aliquam eveniet! Hic
+		maiores veritatis eum cumque odio voluptatem animi quae quo sequi.
+	</p>
+
+	<div class="card">
+		<div>
+			<div class="title">second title</div>
+		</div>
+
+		<div class="title">First title</div>
+	</div>
+
+	<div class="scoping-element">
+		<h2>Scoped title</h2>
+		<p class="text">Lorem ipsum dolor sit.</p>
+		<h2>Out of scope</h2>
+	</div>
+
+	<div>
+		<h2>Unscoped title</h2>
+	</div>
+
+	<a href="https://www.google.com">Google</a
+	><a href="#simple-table">Go to the simple table</a>
+	<a href="http://www.unsafe-browsing.com">No https here</a>
+</html>

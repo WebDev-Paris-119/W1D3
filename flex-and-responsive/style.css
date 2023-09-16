@@ -1,0 +1,151 @@
+@font-face {
+	font-family: "my-font";
+	src: url(./assets/fonts/Rosie\ Brown\ Serif\ Demo.otf);
+}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+* {
+	box-sizing: border-box;
+}
+
+/* html {
+  Big nope:  font-size: 16px;
+} */
+
+html {
+	color-scheme: light dark;
+}
+h1 {
+	font-family: "my-font", sans-serif;
+}
+
+button {
+	font-family: inherit;
+}
+
+h1 {
+	/* font-size: calc(5vw + 2rem); */
+	font-size: clamp(1.5rem, 4rem, 7vw);
+	text-align: center;
+}
+
+#main-nav {
+	/* opacity: 0; */
+	display: none;
+}
+.container:nth-of-type(1) {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	max-width: 90vw;
+	margin: 0 auto;
+}
+
+@media (width > 600px) {
+	.container:nth-of-type(1) {
+		flex-direction: row;
+		background: gray;
+		.card {
+			padding: 0.5rem;
+			width: 200px;
+		}
+		& p {
+			display: -webkit-box;
+			-webkit-line-clamp: 4;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+		}
+	}
+}
+
+@media (900px < width < 909px) {
+	body {
+		background-color: green;
+	}
+}
+
+/* #main-nav {
+	height: 3rem;
+	background: gray;
+	& ul {
+		height: 100%;
+		display: flex;
+		list-style: none;
+		gap: 1rem;
+		justify-content: center;
+		align-items: center;
+	}
+	& a {
+		color: white;
+		font-weight: 700;
+		text-decoration: none;
+	}
+} */
+
+.card {
+	font-size: clamp(1rem, 2rem, 3vw);
+	line-height: calc(0.0125rem + 5vw);
+	border: 1px solid white;
+	border-radius: 0.5rem;
+	& h3 {
+		text-align: center;
+		text-transform: capitalize;
+		text-decoration: underline;
+		text-decoration-color: red;
+		text-underline-offset: 16px;
+	}
+}
+
+#flexboxes {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.container:has(.box) {
+	display: flex;
+	gap: 1rem;
+	width: 400px;
+	/* justify-content: center; */
+	/* justify-content: space-between; */
+	/* justify-content: center; */
+	height: 200px;
+	background: gray;
+}
+.container.first {
+	justify-content: center;
+}
+.container.second {
+	justify-content: center;
+	align-items: center;
+}
+.container.third {
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.container:nth-of-type(3) .box:nth-of-type(2) {
+	flex-grow: 1;
+	align-self: flex-end;
+}
+.container:nth-of-type(3) .box:nth-of-type(10) {
+	justify-self: flex-end;
+}
+
+.container.column {
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	align-content: center;
+}
+
+.box {
+	height: 50px;
+	width: 50px;
+	background-color: white;
+	color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

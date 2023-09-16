@@ -1,0 +1,97 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.special {
+	color: orangered;
+}
+
+#simple-table .special {
+	font-weight: 700;
+	font-style: italic;
+}
+
+#scoped-table {
+	border-collapse: collapse;
+	& th {
+		text-transform: capitalize;
+		/* border-spacing: 0; */
+		/* border-collapse: collapse; */
+	}
+	& th,
+	td {
+		border: 1px solid black;
+		padding: 4px 8px;
+	}
+
+	/* & tbody tr:nth-child(3n + 1)  */
+	& tbody tr:nth-child(even) {
+		background-color: rgb(169, 213, 172);
+	}
+
+	/* .special {
+
+	} */
+}
+
+#text::first-letter {
+	/* font-size: 48px; */
+	color: red;
+	initial-letter: 3 1;
+}
+
+element sub-element {
+}
+
+.card > .title {
+	color: dodgerblue;
+}
+element > sub-element {
+}
+
+td:nth-child(1) {
+	font-style: normal;
+	/* background-color: white; */
+}
+
+td {
+	font-style: oblique;
+	/* background-color: orange; */
+}
+
+@scope (.scoping-element) {
+	h2 {
+		color: brown;
+	}
+}
+
+h2 {
+	color: gray;
+}
+
+/* #john + td {
+	color: azure;
+} */
+
+/* #john ~ td {
+	color: green;
+} */
+
+[href="#simple-table"] {
+	text-decoration: none;
+	color: green;
+}
+
+/* [class="name-of-the-class"] {} */
+/* .name-of-the-class {} */
+
+[href*="https"] {
+	color: yellowgreen;
+	font-size: 3rem;
+}
+
+[href*="unsafe"] {
+	color: red;
+}
